@@ -10,7 +10,7 @@ const html = fs.createReadStream('public/tbt-hussian.html')
 
 env.config()
 const corsOption: CorsOptions = {
-    origin: ["http://127.0.0.1:3000", "https://blowx-waitlist.vercel.app", "https://blowx.com"],
+    origin: "*",
     credentials: true
 }
 const app = express()
