@@ -16,13 +16,14 @@ const corsOption: CorsOptions = {
 const app = express()
 const PORT = process.env.PORT || 4000
 
-app.use('/public', express.static('public'))
 
 
 
 app.use(cors(corsOption))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use('/public', express.static('public'))
+
 
 app.get('/api', (req: Request, res: Response) => {
     res.send('Server is running')
