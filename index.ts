@@ -6,7 +6,7 @@ import { MailOptions } from 'nodemailer/lib/sendmail-transport'
 import fs from 'fs'
 import path from 'path'
 
-const html = fs.createReadStream(path.join(__dirname, '/public/tbt-hussian.html'))
+const html = fs.createReadStream('public/tbt-hussian.html')
 
 env.config()
 const corsOption: CorsOptions = {
@@ -16,6 +16,7 @@ const corsOption: CorsOptions = {
 const app = express()
 const PORT = process.env.PORT || 4000
 
+app.use('/public', express.static('public'))
 
 
 
