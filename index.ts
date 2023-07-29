@@ -42,7 +42,8 @@ app.post('/api/send-mail', (req: Request, res: Response) => {
     })
    const mailOptions: MailOptions ={
     from: {
-        name: 'Blow X',
+        // @ts-ignore
+        name: process.env.MAIL_FROM_NAME,
         // @ts-ignore
         address: process.env.MAIL_FROM_ADDRESS
     },
